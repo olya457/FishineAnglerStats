@@ -1,4 +1,4 @@
-package com.fishineanglerstats
+package com.fishine.angler.stats
 
 import android.app.Application
 import com.facebook.react.PackageList

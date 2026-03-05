@@ -1,4 +1,3 @@
-// src/screens/AnglerStoriesScreen.tsx
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import {
   View,
@@ -68,8 +67,6 @@ export default function AnglerStoriesScreen({ navigation }: any) {
   const isSmall = isSmallH || isSmallW;
 
   const padX = clamp(Math.round(width * (isSmall ? 0.05 : 0.06)), 14, 26);
-
-  // Опускаємо контент на 10-20 пікселів нижче (встановлюємо 0 замість від'ємних значень)
   const contentShift = 0;
 
   const cardW = width - padX * 2;
@@ -139,7 +136,6 @@ export default function AnglerStoriesScreen({ navigation }: any) {
         message: selectedStory.title + "\n\n" + selectedStory.content,
       });
     } catch (error) {
-      // Помилка при спробі поділитися
     }
   }, [selectedStory]);
 

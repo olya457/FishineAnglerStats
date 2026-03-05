@@ -1,4 +1,3 @@
-// src/screens/OnboardingScreen.tsx
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import {
   View,

@@ -1,4 +1,3 @@
-// src/screens/MainMenuScreen.tsx
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import {
   View,
@@ -79,16 +78,10 @@ function pickRandomTip(except?: string) {
 export default function MainMenuScreen({ navigation }: any) {
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
-
-  // ✅ better small-screen detection
   const isSmall = height < 720 || width < 360;
 
   const padX = clamp(Math.round(width * (isSmall ? 0.05 : 0.06)), 14, 26);
-
-  // ✅ tip changes randomly on every screen focus (each entrance)
   const [tip, setTip] = useState<string>(() => pickRandomTip());
-
-  // animations
   const appear = useRef(new Animated.Value(0)).current;
   const heroPulse = useRef(new Animated.Value(0)).current;
 
@@ -235,7 +228,6 @@ export default function MainMenuScreen({ navigation }: any) {
 
       <SafeAreaView style={[styles.safe, { paddingTop: insets.top + 10 }]}>
         <View style={{ paddingHorizontal: padX }}>
-          {/* HERO */}
           <Animated.View
             style={[
               styles.hero,
@@ -248,7 +240,6 @@ export default function MainMenuScreen({ navigation }: any) {
               },
             ]}
           >
-            {/* glow layer */}
             <Animated.View
               pointerEvents="none"
               style={[
@@ -310,7 +301,6 @@ export default function MainMenuScreen({ navigation }: any) {
             </View>
           </Animated.View>
 
-          {/* MENU */}
           <Animated.View style={{ marginTop: isSmall ? 14 : 18, opacity: appear, transform: [{ translateY: listTranslate }] }}>
             <MenuRow title="Find fishing lure" icon={IC_LURE} onPress={() => navigation.navigate('FindFishingLure')} delay={0} />
             <View style={{ height: isSmall ? 12 : 14 }} />

@@ -19,8 +19,6 @@ export default function RootNavigator() {
       <Stack.Screen name="Loader" component={LoaderScreen} />
       <Stack.Screen name="Onboarding" component={OnboardingScreen} />
       <Stack.Screen name="MainTabs" component={MainTabs} />
-
-      {/* Not in tabs (opened from MainMenu) */}
       <Stack.Screen name="FindFishingLure" component={FindFishingLureScreen} />
       <Stack.Screen name="LogCatch" component={LogCatchScreen} />
       <Stack.Screen name="Stats" component={StatsScreen} />

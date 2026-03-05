@@ -1,4 +1,3 @@
-// src/navigation/MainTabs.tsx
 import React from 'react';
 import { Image, Platform, StyleSheet, useWindowDimensions, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -34,20 +33,15 @@ export default function MainTabs() {
   const isSmallH = height < 720;
   const isSmallW = width < 360;
   const isSmall = isSmallH || isSmallW;
-
-  // Розрахунок відступу з боків
   const side = Math.max(12, Math.min(22, Math.round(width * 0.05)));
-  
-  // ПІДНІМАЄМО ПАНЕЛЬ: 
-  // Було 14/20, тепер додаємо +20 пікселів (34 для малих, 40 для великих екранів)
+
   const bottom = isSmall ? 34 : 40;
   
   const barHeight = isSmall ? 58 : 64;
   const iconSize = isSmall ? 24 : 28;
   const paddingHorizontal = isSmall ? 18 : 22;
   const paddingTop = isSmall ? 9 : 10;
-  
-  // Налаштування відступу знизу залежно від платформи
+
   const paddingBottom = Platform.OS === 'ios' 
     ? (isSmall ? 10 : 12) 
     : (isSmall ? 9 : 10);
@@ -62,7 +56,7 @@ export default function MainTabs() {
           position: 'absolute',
           left: side,
           right: side,
-          bottom: bottom, // Застосовано підняття
+          bottom: bottom,
           height: barHeight,
           borderRadius: 40,
           backgroundColor: 'rgba(0, 0, 0, 1)',
@@ -71,12 +65,10 @@ export default function MainTabs() {
           paddingHorizontal: paddingHorizontal,
           paddingTop: paddingTop,
           paddingBottom: paddingBottom,
-          // Тіні для iOS
           shadowColor: '#000000',
           shadowOpacity: 0.35,
           shadowRadius: 14,
           shadowOffset: { width: 0, height: 8 },
-          // Тіні для Android
           elevation: 12,
         },
       }}

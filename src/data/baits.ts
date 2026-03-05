@@ -1,4 +1,3 @@
-// src/data/baits.ts
 export type BaitId =
   | 'spinnerbait'
   | 'soft_plastic_worm'

@@ -1,4 +1,3 @@
-// src/screens/StatsScreen.tsx
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   View,
@@ -46,8 +45,8 @@ function startOfDay(ts: number) {
 
 function startOfWeekMonday(ts: number) {
   const d = new Date(ts);
-  const day = d.getDay(); // 0..6
-  const diffToMonday = (day + 6) % 7; // Mon=0
+  const day = d.getDay(); 
+  const diffToMonday = (day + 6) % 7;
   d.setDate(d.getDate() - diffToMonday);
   d.setHours(0, 0, 0, 0);
   return d.getTime();
@@ -259,8 +258,7 @@ export default function StatsScreen({ navigation }: any) {
   const isSmall = height < 740 || width < 380;
 
   const padX = clamp(Math.round(width * (isTiny ? 0.05 : isSmall ? 0.06 : 0.065)), 14, 28);
-  
-  // Опустив контент на 20 пікселів вниз (з -20 на 0)
+
   const contentShift = 0;
 
   const [mode, setMode] = useState<Mode>('week');

@@ -1,4 +1,4 @@
-package com.fishine.angler.stats
+package com.fishinecatchtracker
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
